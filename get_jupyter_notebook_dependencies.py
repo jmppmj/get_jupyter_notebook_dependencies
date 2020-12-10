@@ -16,9 +16,9 @@ def get_imports():
         yield name
 imports = list(set(get_imports()))
 requirements = []
-for m in pkg_resources.working_set:
-    if m.project_name in imports and m.project_name!="pip":
-        requirements.append((m.project_name, m.version))
+for j in pkg_resources.working_set:
+    if j.project_name in imports and j.project_name!="pip":
+        requirements.append((j.project_name, j.version))
 
 for r in requirements:
     print("{}: {}".format(*r))
